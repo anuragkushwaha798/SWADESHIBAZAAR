@@ -1,0 +1,62 @@
+#form_box {
+    border: 3px solid rgb(88, 183, 255);
+    border-radius: 8px;
+    width: 30%;
+    margin: auto;
+    background-color: rgb(113, 168, 223);
+}
+
+.label_box {
+    font-weight: bold;
+    font-size: 24px;
+    color: #f5f8f9;
+    /* border: 1px solid red; */
+    text-align: left;
+    padding-left: 50px;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.field {
+    font-size: 24px;
+    padding: 8px 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: rgb(21, 138, 221);
+
+}
+
+.field_box {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.err_msg {
+    color: rgb(231, 74, 74);
+    font-size: .7em;
+    display: none;
+    border: 1px solid rgb(243, 115, 115);
+    background-color: rgb(243, 228, 228);
+    padding: 1px 5px;
+}
+
+#btn {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 14px;
+    color: rgb(87, 139, 202);
+    background-color: white;
+    border-radius: 7px;
+    margin: 18px auto;
+}
+
+#error_box {
+    width: 30%;
+    border: 1px solid rgb(228, 57, 57);
+    background-color: rgb(242, 229, 229);
+    color: rgb(240, 83, 83);
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px auto;
+}

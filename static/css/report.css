@@ -1,0 +1,20 @@
+.records_box {
+    margin: 0px auto;
+    border: 1px solid rgb(42, 110, 236);
+    border-radius: 8px;
+    border-collapse: collapse;
+}
+
+.records_box td, .records_box th {
+    border: 1px solid rgb(42, 110, 236);
+    padding: 8px 12px;
+    color: rgb(4, 86, 162);
+}
+
+.records_box td a {
+    text-decoration: none;
+}
+
+.records_box td img {
+    width: 26px;
+}

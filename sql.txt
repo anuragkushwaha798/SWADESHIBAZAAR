@@ -1,0 +1,72 @@
+create database ecartdb;
+
+use ecartdb
+
+create table users 
+(
+    user_id int auto_increment primary key,
+    user_name char(40) not null,
+    email char(255) not null unique,
+    password char(15) not null 
+);
+
+create table products
+(
+    product_id int auto_increment primary key,
+    name char(30) not null
+);
+
+insert into products (name) values ('Laptop'), ('RAM'), ('HDD'), ('SSD'), ('Processor');
+
+create table seller_products 
+(
+    seller_product_id int auto_increment primary key,
+    product_id int not null,
+    user_id int not null,
+    quantity int not null,
+    price int not null,
+    constraint fk_sellrprod_prods foreign key (product_id) references products (product_id),
+    constraint fk_sellrprod_users foreign key (user_id) references users (user_id)
+);
+
+desc seller_products;
+
+select seller_product_id,name,quantity,price 
+from seller_products as sp inner join products as p 
+where sp.product_id=p.product_id and user_id=24;
+
+select seller_product_id,name,user_name,quantity,price 
+from seller_products as sp inner join products as p inner join users as u 
+where sp.product_id=p.product_id and sp.user_id=u.user_id and sp.user_id=24;
+
+alter table users add column my_pic char(250) not null after user_name;
+
+alter table users change column password password char(255) not null;  
+
+alter table users add column user_type varchar(20) not null;
+
+update users set user_type='General User';
+
+update users set user_type='Manager Babu' where user_id=22;
+
+alter table users drop column user_type;
+
+create table user_types 
+(
+    user_type_id int auto_increment primary key,
+    type char(20) not null
+);
+
+insert into user_types (type) values ('General User'), ('Manager User');
+
+alter table users add column user_type_id int not null,
+add constraint fk_users_usertypes foreign key (user_type_id)
+references user_types (user_type_id); 
+
+create table seller_product_images
+(
+    seller_product_image_id int auto_increment primary key,
+    seller_product_id int not null,
+    image_path char(255) not null,
+    constraint fk_spimages_selpro foreign key (seller_product_id) references seller_products (seller_product_id) 
+);
